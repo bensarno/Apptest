@@ -95,6 +95,15 @@ export default function Game() {
     );
 }
 
+
+const playGameOverSound = () => {
+    const audio = new Audio('/audios/180.mp3');
+    audio.preload = "auto";
+    document.body.addEventListener('click', () => {
+        audio.play().catch(error => console.error("Audio play failed:", error));
+    }, { once: true });
+};
+
 function calculateWinner(squares) {
     const lines = [
         [0, 1, 2],
@@ -109,8 +118,10 @@ function calculateWinner(squares) {
     for (let i = 0; i < lines.length; i++) {
         const [a, b, c] = lines[i];
         if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+            playGameOverSound(); // Play sound when the game ends
             return squares[a];
         }
     }
     return null;
 }
+

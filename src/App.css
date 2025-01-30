@@ -29,6 +29,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url("./images/bunting.png"); /* Background image for the board */
+    background-size: cover; /* Ensure the image covers the whole board */
+    background-position: center;
+    width: 400px; /* Adjust as per the size you need */
+    height: 400px; /* Adjust as per the size you need */
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Board Row */
@@ -42,12 +49,14 @@ body {
 .square {
     width: 80px;
     height: 80px;
-    background-color: #f8f8f8;
+    background-image: url("./images/cal.png"); /* Background image for each square */
+    background-size: cover;
+    background-position: center;
     border: 2px solid #ccc;
     border-radius: 8px;
     font-size: 2em;
     font-weight: bold;
-    color: #333;
+    color: white;
     transition: background-color 0.3s ease;
     cursor: pointer;
     display: flex;
@@ -69,6 +78,7 @@ body {
     margin-bottom: 20px;
     font-size: 1.2em;
     font-weight: bold;
+    color:white;
 }
 
 /* Game Info (Move History) */
